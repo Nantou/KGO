@@ -60,38 +60,39 @@ public class KGO {
     int servant4 = rnd.nextInt(5);
     // 対応したservantのattack, quick, defenceの数にもとづいてcpuCardsを埋める
     int cpuNum = 0;
-    for (int i = 0; i < attackCards[servant4]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Attack:" + servant[servant4];
+    for (int i = 0; i < attackCards[servant4]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Attack:" + servant[servant4];
     }
-    for (int i = 0; i < quickCards[servant4]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Quick:" + servant[servant4];
+
+    for (int i = 0; i < quickCards[servant4]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Quick:" + servant[servant4];
     }
-    for (int i = 0; i < defenceCards[servant4]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Defence:" + servant[servant4];
+    for (int i = 0; i < defenceCards[servant4]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Defence:" + servant[servant4];
     }
 
     int servant5 = rnd.nextInt(5);
     // 対応したservantのattack, quick, defenceの数にもとづいてcpuCardsを埋める
-    for (int i = 0; i < attackCards[servant5]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Attack:" + servant[servant5];
+    for (int i = 0; i < attackCards[servant5]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Attack:" + servant[servant5];
     }
-    for (int i = 0; i < quickCards[servant5]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Quick:" + servant[servant5];
+    for (int i = 0; i < quickCards[servant5]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Quick:" + servant[servant5];
     }
-    for (int i = 0; i < defenceCards[servant5]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Defence:" + servant[servant5];
+    for (int i = 0; i < defenceCards[servant5]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Defence:" + servant[servant5];
     }
 
     int servant6 = rnd.nextInt(5);
     // 対応したservantのattack, quick, defenceの数にもとづいてcpuCardsを埋める
-    for (int i = 0; i < attackCards[servant6]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Attack:" + servant[servant6];
+    for (int i = 0; i < attackCards[servant6]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Attack:" + servant[servant6];
     }
-    for (int i = 0; i < quickCards[servant6]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Quick:" + servant[servant6];
+    for (int i = 0; i < quickCards[servant6]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Quick:" + servant[servant6];
     }
-    for (int i = 0; i < defenceCards[servant6]; i++, pcNum++) {
-      this.cpuCards[pcNum] = "Defence:" + servant[servant6];
+    for (int i = 0; i < defenceCards[servant6]; i++, cpuNum++) {
+      this.cpuCards[cpuNum] = "Defence:" + servant[servant6];
     }
     for (int i = 0; i < this.cpuCards.length; i++) {
       int r = rnd.nextInt(this.cpuCards.length);
@@ -100,9 +101,11 @@ public class KGO {
       this.cpuCards[r] = temp;
     }
 
+    System.out.println("Player----------------------");
     for (int i = 0; i < this.playerCards.length; i++) {
       System.out.println(this.playerCards[i]);
     }
+    System.out.println("CPU-------------------------");
     for (String s : this.cpuCards) {
       System.out.println(s);
     }
