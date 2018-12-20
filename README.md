@@ -17,7 +17,7 @@
 - 同じコードを何回でも書く
 
 ## KGO仕様
-- Main.javaではRedfantasyクラスをnewしたあと，3秒毎にstartPhase()を呼び出し，player/cpuいずれかのHPが0以下になるまで繰り返す．
+- Main.javaではKGOクラスをnewしたあと，3秒毎にstartPhase()を呼び出し，player/cpuいずれかのHPが0以下になるまで繰り返す．
 - playerMonsters/playerMonstersPoint はint型の配列で，モンスターのカード番号とmonsterPointが格納される
   - モンスターのカード番号はMain.javaのsetMonstersメソッドでmonsters配列に格納される配列のindex(0~21)が表す
 - startPhase()では，下記の順に処理が行われる
