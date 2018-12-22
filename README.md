@@ -19,15 +19,15 @@
 ## KGO仕様
 - Main.javaではKGOクラスをnewしたあと，繰り返しstartPhase()を呼び出し，player/cpuいずれかのHPが0以下になるまで繰り返す．
 - initLibrary()はサーヴァントの初期化を行う．
-- callServants()は全サーヴァントから3体のサーヴァント（重複あり）をPlayer/CPUそれぞれについて召喚し，15枚のカードからなるDeck（playerCards,cpuCardsの各配列）を構築する．
+- callServants()は全サーヴァントから3体のサーヴァント（重複あり）をPlayer/CPUそれぞれについて召喚し，サーヴァント毎に5枚ずつで合計15枚のカードからなるDeck（playerCards,cpuCardsの各配列）を構築する．
   - このメソッドは15枚のカードがなくなるたびに呼び出される．
 - startPhase()では，下記の順に処理が行われる
   1. 各種GameStatus初期化（Draw済みカード等）
   1. Deckから3枚カードを引く
-    - カードは3種類，Quick，Attack, Defence
-    - Quickが2枚そろうと追加で1枚カードが増える（増えるカードはすでに引いた3枚のカードからランダムに選ばれる），3枚そろうと2枚カードが増える
-    - Attackは3枚揃うと相手の防御力を無視した攻撃ができる，2枚の場合はAttack Pointが倍になる
-    - Defenceは3枚そろうと相手の攻撃をカウンターする（防御無視攻撃もカウンターできる），2枚の場合はGuard Pointが2倍になる．
+     - カードは3種類，Quick，Attack, Defence
+     - Quickが2枚そろうと追加で1枚カードが増える（増えるカードはすでに引いた3枚のカードからランダムに選ばれる），3枚そろうと2枚カードが増える
+     - Attackは3枚揃うと相手の防御力を無視した攻撃ができる，2枚の場合はAttack Pointが倍になる
+     - Defenceは3枚そろうと相手の攻撃をカウンターする（防御無視攻撃もカウンターできる），2枚の場合はGuard Pointが2倍になる．
   1. カードそれぞれのポイントを決定する(全カードの合計ポイントがPlayer/CPUそれぞれのAttack PointとGuard Pointになる)
   1. Quick, Attack, Defenceのカード枚数をカウントし，特殊効果を付与する．
   1. それぞれのAttack Point，Guard Pointと特殊効果にもとづいて互いに攻撃を行い，それぞれのHPを減少させる
